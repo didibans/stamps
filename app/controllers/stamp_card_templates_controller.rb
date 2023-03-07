@@ -1,0 +1,2 @@
+class StampCardTemplatesController < ApplicationController
+end
