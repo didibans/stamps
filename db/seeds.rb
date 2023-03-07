@@ -10,7 +10,7 @@ User.destroy_all
     username: Faker::Internet.username,
     email: Faker::Internet.email,
     password: Faker::Internet.password,
-    #profile_image_url: "", # Faker::Avatar.image,
+    profile_img_url: Faker::Avatar.image,
     qr_code_id: Faker::Number.unique.between(from: 1000, to: 9999)
   )
   puts "#{User.last.username} created..."
@@ -24,7 +24,7 @@ restaurant_names = ["Burger Joint", "Mediterranean Bistro", "Sushi Bar", "The St
     name: restaurant_names[name], # Faker::Restaurant.name
     category: Faker::Restaurant.type,
     address: Faker::Address.full_address,
-    # img_url: "", #Faker::Company.logo,
+    img_url: Faker::Company.logo,
     user_id: User.all.sample.id
   )
   puts "#{Shop.last.name} created..."
