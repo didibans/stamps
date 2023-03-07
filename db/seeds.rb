@@ -1,34 +1,52 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
-
-# Seed file for gastronomy shops database
 require 'faker'
 
-# Create some users
+StampCard.destroy_all
+StampCardTemplate.destroy_all
+Shop.destroy_all
+User.destroy_all
+
 10.times do
   User.create!(
     username: Faker::Internet.username,
     email: Faker::Internet.email,
     password: Faker::Internet.password,
-    profile_image_url: Faker::Avatar.image,
+    #profile_image_url: "", # Faker::Avatar.image,
     qr_code_id: Faker::Number.unique.between(from: 1000, to: 9999)
   )
+  puts "#{User.last.username} created..."
 end
 
-# Create some shops
-restaurant_names = ["The French Connection", "Mediterranean Bistro", "Sushi Palace", "The Steakhouse", "Bakery Delights", "Coffee House", "The Tavern", "The Pub", "Café du Monde", "Café Brasil"]
+restaurant_names = ["Burger Joint", "Mediterranean Bistro", "Sushi Bar", "The Steakhouse",
+                    "Bakery Delights", "Coffee House", "The Tavern", "The Pub", "Café du Monde", "Café Brasil"]
 
-10.times do
+10.times do |name|
   Shop.create!(
-    name: restaurant_names(1..10), # Faker::Restaurant.name,
+    name: restaurant_names[name], # Faker::Restaurant.name
     category: Faker::Restaurant.type,
     address: Faker::Address.full_address,
-    image_url: Faker::Company.logo,
-    user_id: Faker::Number.between(from: 1, to: 10)
+    # img_url: "", #Faker::Company.logo,
+    user_id: User.all.sample.id
   )
+  puts "#{Shop.last.name} created..."
 end
+
+dates = [(DateTime.now + 1.year), (DateTime.now + 2.years), (DateTime.now + 5.month), (DateTime.now + 9.months), (DateTime.now + 18.months), (DateTime.now + 3.months)]
+
+StampCardTemplate.create!(
+  [
+    { title: "One Burger for FREE", description: "Buy 10 burgers, get 1 free!", max_stamps: 10, expiration_date: dates.sample, shop: Shop.find_by(name: "Burger Joint") },
+    { title: "Every 10th coffee on the house", description: "Get a free brazilian coffee after completion!", max_stamps: 10, expiration_date: dates.sample, shop: Shop.find_by(name: "Café Brasil") },
+    { title: "Pizza for free", description: "Get a free pizza with every 10th order!", max_stamps: 10, expiration_date: dates.sample, shop: Shop.find_by(name: "Mediterranean Bistro") },
+    { title: "Omakase experience on the house", description: "Experience our chef's omakase menu and earn a stamp for each course!", max_stamps: 10, expiration_date: dates.sample, shop: Shop.find_by(name: "Sushi Bar") },
+    { title: "Argentinian Steak for free", description: "Experience one free argentinian Steak in our lovely place after completion.", max_stamps: 10, expiration_date: dates.sample, shop: Shop.find_by(name: "The Steakhouse") },
+    { title: "Buy 10 drinks, get 1 for free!", description: "Enjoy our drinks and collect a stamp for each!", max_stamps: 10, expiration_date: dates.sample, shop: Shop.find_by(name: "The Pub") },
+    { title: "Free drink on us", description: "Buy drinks in our Tavern and get a free drink for the 10th!", max_stamps: 10, expiration_date: dates.sample, shop: Shop.find_by(name: "The Tavern") },
+    { title: "Free Coffee delight", description: "Get every 11th coffee on the house", max_stamps: 10, expiration_date: dates.sample, shop: Shop.find_by(name: "Coffee House") },
+    { title: "Free loave of bread", description: "Buy 10 loaves of bread, get 1 free!", max_stamps: 10, expiration_date: dates.sample, shop: Shop.find_by(name: "Bakery Delights") },
+    { title: "One Coffee for free", description: "Get a free coffee once completed.", max_stamps: 10, expiration_date: dates.sample, shop: Shop.find_by(name: "Café du Monde") }
+  ]
+)
+puts "Created StampCard-Template for each shop..."
+
+seed_stamp_card = StampCard.create!(stamp_amount: 6, user_id: User.all.sample.id, stamp_card_template_id: StampCardTemplate.all.sample.id)
+puts "Created StampCard for #{seed_stamp_card.user.username} of #{seed_stamp_card.stamp_card_template.shop.name}"
