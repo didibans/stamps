@@ -8,6 +8,8 @@ gem "rails", "~> 7.0.4", ">= 7.0.4.2"
 
 gem 'rqrcode'
 
+gem "geocoder"
+
 gem "cloudinary"
 
 gem "pundit"
