@@ -277,11 +277,8 @@ GEM
     zeitwerk (2.6.7)
 
 PLATFORMS
-
-  arm64-darwin-22
-
   arm64-darwin-21
-
+  arm64-darwin-22
   x86_64-linux
 
 DEPENDENCIES
