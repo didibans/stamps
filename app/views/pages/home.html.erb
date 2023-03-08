@@ -2,7 +2,7 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
 
-
+<!--
   <div class="container d-flex align-items-center justify-content-center">
     <div id="carouselExampleCaptions" class="carousel slide mt-5" data-bs-ride="carousel">
       <div class="carousel-indicators">
@@ -39,3 +39,15 @@
       </button>
     </div>
   </div>
+  -->
+
+<div class="container stampcard-confirmation-container text-center align-items-center justify-content-center">
+
+  <div class="stampcard-and-alert align-items-center justify-content-center">
+    <%= render "shared/stampcard" %>
+  </div>
+
+  <div class="alert alert-success text-center align-items-center justify-content-center" role="alert">
+    <h1><%=  "Stampcard added!" %></h1>
+  </div>
+</div>
