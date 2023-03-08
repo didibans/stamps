@@ -1,16 +1,15 @@
-<nav class="navbar bg-light fixed-top">
+<nav class="navbar bg-dark fixed-top">
   <div class="container-fluid">
 
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+
+    <button class="btn btn-dark">
+      <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar" %>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-        <% if user_signed_in? %>
+       <!-- <% if user_signed_in? %>
           <li class="nav-item active">
             <%= link_to "Home", "#", class: "nav-link" %>
           </li>
@@ -29,12 +28,12 @@
 
             <%= link_to "Login", new_user_session_path, class: "nav-link" %>
 
-        <% end %>
-      </ul>
-    </div>
+        <% end %>'
+      <!-->
+
     <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
       <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Left menu</h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
