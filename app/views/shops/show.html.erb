@@ -1,7 +1,15 @@
 <h1><%= @shop.name %></h1>
 
-<div style="width: 100%; height: 300px;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+<div class="map-address">
+  <div class="map" style="width: 100%; height: 300px;"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+  <div class="map-info">
+    <p><strong>Address</strong></p>
+    <% address = @shop.address.split(",") %>
+    <p><%= address[0] %></p>
+    <p><%= address[1] %></p>
+  </div>
 </div>
