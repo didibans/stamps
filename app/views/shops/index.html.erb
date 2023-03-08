@@ -1,6 +1,11 @@
 <h1>Shop index</h1>
-<ul>
-  <% @shops.each do |shop| %>
-    <li><%= link_to shop.name, shop_path(shop) %></li>
-  <% end %>
-</ul>
+<%= render "shared/searchbar" %>
+<div data-controller="insert-in-list">
+  <div data-insert-in-list-target="items">
+    <ul>
+      <% @shops.each do |shop| %>
+        <li><%= link_to shop.name, shop_path(shop) %></li>
+    <% end %>
+    </ul>
+  </div>
+</div>
