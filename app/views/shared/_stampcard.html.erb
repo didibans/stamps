@@ -1,10 +1,10 @@
 <div class="container">
   <div class="main-container">
     <div class="thecard" data-controller="stamp-card">
-      <div class="front p-3">
+      <div class="front p-3" data-action="click->stamp-card#switchToBack">
         <div class="card-first-line">
           <h2>Shop.name</h2>
-          <i class="fa-solid fa-circle-info" data-action="click->stamp-card#switchToBack"></i>
+          <i class="fa-solid fa-circle-info" ></i>
         </div>
           <p>stamp_card.title</p>
           <div class="img-container">
@@ -21,10 +21,10 @@
 
           </div>
       </div>
-      <div class="back p-3">
+      <div class="back p-3" data-action="click->stamp-card#switchToFront">
         <div class="card-first-line">
           <h2>Shop.name</h2>
-          <i class="fa-solid fa-xmark" data-action="click->stamp-card#switchToFront"></i>
+          <i class="fa-solid fa-xmark"></i>
         </div>
         <p>stamp_card.description</p>
 
