@@ -9,7 +9,7 @@ User.destroy_all
   User.create!(
     username: Faker::Internet.username,
     email: Faker::Internet.email,
-    password: Faker::Internet.password,
+    password: "123qwe",
     profile_img_url: Faker::Avatar.image,
     qr_code_id: Faker::Number.unique.between(from: 1000, to: 9999)
   )
@@ -19,11 +19,24 @@ end
 restaurant_names = ["Burger Joint", "Mediterranean Bistro", "Sushi Bar", "The Steakhouse",
                     "Bakery Delights", "Coffee House", "The Tavern", "The Pub", "Café du Monde", "Café Brasil"]
 
+addresses = [
+  "Hohenzollernring 55, 50672 Köln",
+  "Ebertplatz 2, 50668 Köln",
+  "Im Ferkulum 42, 50678 Köln",
+  "Eigelstein 69, 50668 Köln",
+  "Hansaring 68-70, 50670 Köln",
+  "Apostelnstraße 11, 50667 Köln",
+  "Rathenauplatz 2, 50674 Köln",
+  "Neusser Straße 41, 50670 Köln",
+  "Subbelrather Straße 156, 50823 Köln",
+  "Luxemburger Str. 281, 50939 Köln"
+]
+
 10.times do |name|
   Shop.create!(
     name: restaurant_names[name], # Faker::Restaurant.name
     category: Faker::Restaurant.type,
-    address: Faker::Address.full_address,
+    address: addresses[name],
     img_url: Faker::Company.logo,
     user_id: User.all.sample.id
   )
