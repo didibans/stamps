@@ -1,11 +1,19 @@
 <h1>Shop index</h1>
-<%= render "shared/searchbar" %>
-<div data-controller="insert-in-list">
-  <div data-insert-in-list-target="items">
-    <ul>
-      <% @shops.each do |shop| %>
-        <li><%= link_to shop.name, shop_path(shop) %></li>
-    <% end %>
-    </ul>
+<div class="wrapper" data-controller="index-search">
+  <%= f.text_field :query, class: "form-control", placeholder:
+                     "Find your place", value: params[:query],
+                     data: {
+                        search_shop_target: "input",
+                        action: "keyup->search-shops#update"
+                      } %>
+
+  <div data-controller=>
+    <div data-index-search-target="items">
+      <ul>
+        <% @shops.each do |shop| %>
+          <li><%= link_to shop.name, shop_path(shop) %></li>
+      <% end %>
+      </ul>
+    </div>
   </div>
 </div>

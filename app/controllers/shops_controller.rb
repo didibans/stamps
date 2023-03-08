@@ -6,6 +6,10 @@ class ShopsController < ApplicationController
       # @shops = policy_scope(Shop).where(category: params[:query])
       sql_query = "category ILIKE :query OR name ILIKE :query"
       @shops = policy_scope(Shop).where(sql_query, query: "%#{params[:query]}%")
+      respond_to do |format|
+        format.html # Follow regular flow of Rails
+        format.text { render partial: "shared/list", locals: { shops: @shops }, formats: [:html] }
+      end
     else
       @shops = policy_scope(Shop)
     end
