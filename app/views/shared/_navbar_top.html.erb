@@ -1,13 +1,15 @@
-<nav class="navbar bg-dark sticky-top">
+<nav class="navbar sticky-top">
   <div class="container-fluid">
 
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <button class="btn btn-dark">
-      <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar" %>
-    </button>
+<%= link_to root_path do %>
+  <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar" %>
+<% end %>
+
+
 
        <!-- <% if user_signed_in? %>
           <li class="nav-item active">
