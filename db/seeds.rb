@@ -9,7 +9,7 @@ User.destroy_all
   User.create!(
     username: Faker::Internet.username,
     email: Faker::Internet.email,
-    password: Faker::Internet.password,
+    password: "123qwe",
     profile_img_url: Faker::Avatar.image,
     qr_code_id: Faker::Number.unique.between(from: 1000, to: 9999)
   )
