@@ -1,0 +1,22 @@
+.map-address {
+  position: relative;
+}
+
+.map {
+}
+
+.map-info {
+  background-color: white;
+  border-radius: 6px;
+  border: 0.5px solid grey;
+  height: 70px;
+  width: 180px;
+  position: absolute;
+  left: 100px;
+  bottom: 15px;
+  padding: 8px;
+  font-size: 12px;
+  p {
+    margin: 0;
+  }
+}
