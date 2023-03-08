@@ -1,0 +1,13 @@
+.nav-bot {
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.nav-bot .fa-solid {
+  color: black;
+}
