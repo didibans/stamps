@@ -1,15 +1,17 @@
-.alert h1 {
-  height: 500px;
-  width: 500px;
+.modal {
+opacity: 90%;
+background-color: #DFE4ED;
+border: 2px solid rgb(118, 221, 118);
 }
 
-.alert {
+.modal-body {
+  opacity: 100%;
 
-  // background-color: #DFE4ED;
-  position: fixed;
-  left: 0;
 }
 
-// .stampcard-and-alert {
-//   height: 700px
-// }
+.modal-content {
+  opacity: 100%;
+  border: 2px solid rgb(118, 221, 118);
+  align-items: center;
+  justify-content: center;
+}
