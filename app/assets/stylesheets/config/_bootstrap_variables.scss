@@ -24,3 +24,8 @@ $border-radius-lg: 2px;
 $border-radius-sm: 2px;
 
 // Override other variables below!
+
+$modal-fade-transform: translate3d(0, 100vh, 0);
+// $modal-dialog-transform: translate3d(0, 100vh, 0);
+// $modal-in-transform: translate3d(0, 0, 0);
+// $modal-show-transform: scale(.95);
