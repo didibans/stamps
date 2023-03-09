@@ -16,11 +16,11 @@
       <% if current_user %>
         <%= render "shared/navbar_top" %>
         <%= render "shared/navbar_bottom" %>
-        <div style="height: 50px"></div>
       <% end %>
       <div>
         <%= yield %>
       </div>
+        <div style="height: 70px"></div>
       <%= render "shared/flashes" %>
     <%# <% else %>
       <%# <% redirect_to new_user_session_path %>
