@@ -12,7 +12,8 @@ class ShopsController < ApplicationController
     @markers = [
       {
         lat: @shop.latitude,
-        lng: @shop.longitude
+        lng: @shop.longitude,
+        map_info_window_html: render_to_string(partial: "map_info_window", locals: { shop: @shop })
       }
     ]
   end

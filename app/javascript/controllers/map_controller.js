@@ -11,17 +11,19 @@ export default class extends Controller {
 
     this.map = new mapboxgl.Map({
       container: this.element,
-      style: "mapbox://styles/mapbox/streets-v10"
+      style: "mapbox://styles/mapbox/streets-v12",
+      interactive: false
     })
-
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
   }
 
   #addMarkersToMap() {
     this.markersValue.forEach((marker) => {
-      new mapboxgl.Marker()
-        .setLngLat([ marker.lng, marker.lat ])
+      new mapboxgl.Marker({
+        color: "orange"
+      })
+        .setLngLat([marker.lng, marker.lat])
         .addTo(this.map)
     })
   }

@@ -3,4 +3,7 @@ class PagesController < ApplicationController
 
   def home
   end
+
+  def qr_code_show
+  end
 end
