@@ -1,0 +1,11 @@
+<div class="navbar-back">
+  <h1><strong>QR-Code</strong></h1>
+  <i class="fa-solid fa-xmark"></i>
+</div>
+<div class="qr-code-card d-flex align-items-center justify-content-center">
+  <div class="qr-code">
+    <% if current_user %>
+      <%= cl_image_tag current_user.qrcode.key, style: "border-radius: 8px;"  %>
+    <% end %>
+  </div>
+</div>
