@@ -1,21 +1,20 @@
-<div data-search-shop-target="list">
-  <% shops.each do |shop| %>
-    <%= link_to shop_path(shop), style: "text-decoration: none" do %>
-      <div class="card-product my-2">
-        <div class="card-img-container">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+<% shops.each do |shop| %>
+  <%= link_to shop_path(shop), style: "text-decoration: none" do %>
+    <div class="card-product my-2">
+      <div class="card-img-container">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+      </div>
+      <div class="card-product-infos">
+        <div class="first-line-right">
+          <h2> <%= shop.name %> </h2>
+          <h2> <%= "distance" %> </h2>
         </div>
-        <div class="card-product-infos">
-          <div class="first-line-right">
-            <%= shop.name %>
-            <p>distance</p>
-          </div>
-          <p>here is going to be some text // here is going to be some text // here is going to be some text</p>
-          <div class="last-line-right">
-            <%= shop.category %>
-          </div>
+        <p><%= "here is going Lorem ipsum dolor sit amet consectetur adipisicing elit. In facilis magnam numquam officiis, vitae sapiente quia, placeat cum dolorum odit veritatis facere sint minus ducimus fuga dolorem unde libero sit!" %></p>
+        <div class="last-line-test">
+          <h2> available stamps </h2>
+          <h2> <%= "hdhd" %> </h2>
         </div>
       </div>
-    <% end %>
+    </div>
   <% end %>
-</div>
+<% end %>
