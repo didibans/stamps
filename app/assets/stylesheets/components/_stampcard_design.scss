@@ -50,10 +50,12 @@
 
 .img-container img{
   border: 2px solid green ;
-  height: 0;
-  width: 100%;
-  padding-bottom: 100%;
+  height: 62px;
+  width: 62px;
+  // padding-bottom: 100%;
   border-radius: 50%;
+  object-fit: cover;
+  position: center;
 }
 
 .img-container {
