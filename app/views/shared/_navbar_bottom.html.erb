@@ -2,10 +2,45 @@
   <%= link_to root_path do  %>
     <i class="fa-solid fa-house"></i>
   <% end %>
-  <%= link_to root_path do  %>
-    <i class="fa-solid fa-qrcode"></i>
-  <% end %>
+    <i class="fa-solid fa-qrcode" data-bs-toggle="modal" data-bs-target="#qr-code-modal"></i>
   <%= link_to root_path do  %>
     <i class="fa-solid fa-stamp"></i>
   <% end %>
+</div>
+
+<div class="modal fade" tabindex="-1" id="qr-code-modal">
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">My QR Code</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="qr-code-card d-flex align-items-center justify-content-center">
+            <div class="qr-code">
+                <%= cl_image_tag current_user.qrcode.key, style: "border-radius: 8px;"  %>
+            </div>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" data-bs-target="#scanned-verification" data-bs-toggle="modal">Confirmation(show_purpose)</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="scanned-verification" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Confirmation</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Successfully added a stamp.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Dismiss</button>
+      </div>
+    </div>
+  </div>
 </div>
