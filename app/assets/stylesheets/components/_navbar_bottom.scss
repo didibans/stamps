@@ -1,20 +1,26 @@
 .nav-bot {
-  background-color: whitesmoke;
+  background-color: white;
+  border-top: 0.8px solid $light-gray;
   display: flex;
   justify-content: space-around;
-  // text-align: center;
   position: fixed;
   bottom: 0;
   width: 100%;
-}
-
-.nav-bot .fa-solid {
-  color: black;
+  text-align: center;
+  padding: 10px;
+  i {
+    font-size: 28px;
+    color: $blue;
+  }
+  p {
+    font-size: 12px;
+    margin-bottom: 0;
+    color: $blue;
+  }
 }
 
 .last-line-space {
   height: 57px;
   width: 390px;
   padding: 8px;
-
 }
