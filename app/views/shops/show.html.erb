@@ -1,7 +1,5 @@
-<div class="shop-picture-container container d-flex flex-column align-items-center justify-content-center"><!--<%= @shop.img_url %> This is the real logic, but in the meanwhile we have the image you see--> <%= image_tag("restaurant.jpeg") %>
+<div class="shop-picture-container container d-flex flex-column align-items-center justify-content-center py-1"><!--<%= @shop.img_url %> This is the real logic, but in the meanwhile we have the image you see--> <%= image_tag("restaurant.jpeg") %>
   <h1><%= @shop.name %></h1>
-
-
   <ul class="list-unstyled">
   <li><%= render "shared/stampcard" %></li>
   <li><%= render "shared/opening_hours" %></li>
