@@ -1,19 +1,18 @@
 <h1>Shop index</h1>
-<div class="wrapper" data-controller="index-search">
-  <%= f.text_field :query, class: "form-control", placeholder:
-                     "Find your place", value: params[:query],
-                     data: {
-                        search_shop_target: "input",
-                        action: "keyup->search-shops#update"
-                      } %>
 
-  <div data-controller=>
-    <div data-index-search-target="items">
-      <ul>
-        <% @shops.each do |shop| %>
-          <li><%= link_to shop.name, shop_path(shop) %></li>
-      <% end %>
-      </ul>
-    </div>
+<div class="wrapper" data-controller="search-shop">
+  <%= form_with url: shops_path, method: :get, html: {class:
+    "mb-4", data: {search_shop_target: "form"}} do |f| %>
+      <%= f.text_field :query,
+                        class: "form-control",
+                        placeholder: "Find your place",
+                        value: params[:query],
+                        data: {
+                          search_shop_target: "input",
+                          action: "keyup->search-shop#update"
+                        } %>
+    <% end %>
+  <div>
+    <%= render "shop_cards", shops: @shops %>
   </div>
 </div>

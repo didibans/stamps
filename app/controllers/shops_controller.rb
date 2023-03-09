@@ -8,7 +8,7 @@ class ShopsController < ApplicationController
       @shops = policy_scope(Shop).where(sql_query, query: "%#{params[:query]}%")
       respond_to do |format|
         format.html # Follow regular flow of Rails
-        format.text { render partial: "shared/list", locals: { shops: @shops }, formats: [:html] }
+        format.text { render partial: "shops/shop_cards", locals: { shops: @shops }, formats: [:html] }
       end
     else
       @shops = policy_scope(Shop)
@@ -17,6 +17,16 @@ class ShopsController < ApplicationController
 
   def show
     authorize @shop
+    @stamp_card_template = StampCardTemplate.find_by(shop: @shop)
+    @stamp_card = StampCard.find_by(stamp_card_template: @stamp_card_template)
+    @markers = [
+      {
+        lat: @shop.latitude,
+        lng: @shop.longitude,
+        map_info_window_html: render_to_string(partial: "map_info_window", locals: { shop: @shop })
+      }
+    ]
+
   end
 
   def new
