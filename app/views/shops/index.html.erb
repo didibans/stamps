@@ -1,9 +1,5 @@
 <h1>Shop index</h1>
-<ul>
-  <% @shops.each do |shop| %>
-    <li><%= link_to shop.name, shop_path(shop) %></li>
-  <% end %>
-  <% if current_user %>
-    <%= cl_image_tag current_user.qrcode.key %>
-  <% end %>
-</ul>
+<%= render "shared/shop_cards", shops: @shops %>
+  <%# <% if current_user %>
+    <%# <%= cl_image_tag current_user.qrcode.key %>
+  <%# <% end %>
