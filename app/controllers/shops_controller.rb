@@ -2,7 +2,17 @@ class ShopsController < ApplicationController
   before_action :set_shop, only: %i[show edit update destroy]
 
   def index
-    @shops = policy_scope(Shop)
+    if params[:query].present?
+      # @shops = policy_scope(Shop).where(category: params[:query])
+      sql_query = "category ILIKE :query OR name ILIKE :query"
+      @shops = policy_scope(Shop).where(sql_query, query: "%#{params[:query]}%")
+      respond_to do |format|
+        format.html # Follow regular flow of Rails
+        format.text { render partial: "shops/shop_cards", locals: { shops: @shops }, formats: [:html] }
+      end
+    else
+      @shops = policy_scope(Shop)
+    end
   end
 
   def show

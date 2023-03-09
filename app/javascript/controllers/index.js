@@ -7,8 +7,13 @@ import { application } from "./application"
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
+
+import SearchShopController from "./search_shop_controller"
+application.register("search-shop", SearchShopController)
+
 import MapController from "./map_controller"
 application.register("map", MapController)
+
 
 import StampCardController from "./stamp_card_controller"
 application.register("stamp-card", StampCardController)
