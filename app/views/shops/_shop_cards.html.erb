@@ -3,7 +3,7 @@
     <%= link_to shop_path(shop), style: "text-decoration: none" do %>
       <div class="card-product my-2">
         <div class="card-img-container">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+          <img src="<%= shop.img_url %>" style="object-fit: scale-down" />
         </div>
         <div class="card-product-infos">
           <div class="first-line-right">
