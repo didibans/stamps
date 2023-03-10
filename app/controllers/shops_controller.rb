@@ -2,6 +2,8 @@ class ShopsController < ApplicationController
   before_action :set_shop, only: %i[show edit update destroy]
 
   def index
+    @shop = Shop.last
+    @stamp_card_template = @shop.stamp_card_templates[0]
     if params[:query].present?
       # @shops = policy_scope(Shop).where(category: params[:query])
       sql_query = "category ILIKE :query OR name ILIKE :query"

@@ -1,18 +1,20 @@
-<h1>Shop index</h1>
+<div class="container">
+  <h1 class="pt-3">Local Shops</h1>
 
-<div class="wrapper" data-controller="search-shop">
-  <%= form_with url: shops_path, method: :get, html: {class:
-    "mb-4", data: {search_shop_target: "form"}} do |f| %>
-      <%= f.text_field :query,
-                        class: "form-control",
-                        placeholder: "Find your place",
-                        value: params[:query],
-                        data: {
-                          search_shop_target: "input",
-                          action: "keyup->search-shop#update"
-                        } %>
-    <% end %>
-  <div>
-    <%= render "shop_cards", shops: @shops %>
+  <div class="wrapper" data-controller="search-shop">
+    <%= form_with url: shops_path, method: :get, html: {class:
+      "mb-4", data: {search_shop_target: "form"}} do |f| %>
+        <%= f.text_field :query,
+                          class: "form-control",
+                          placeholder: "Find your place",
+                          value: params[:query],
+                          data: {
+                            search_shop_target: "input",
+                            action: "keyup->search-shop#update"
+                          } %>
+      <% end %>
+    <div>
+      <%= render "shop_cards", shops: @shops %>
+    </div>
   </div>
 </div>

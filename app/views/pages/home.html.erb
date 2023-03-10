@@ -9,19 +9,20 @@
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3" class="d-none"></button>
         </div>
       </div>
+      <%=  %>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <%= render "shared/stampcard" %>
+          <%= render "shared/stampcard", stamp_card_template: @stamp_card_template, shop: @shop%>
           <div class="carousel-caption d-none d-md-block">
           </div>
         </div>
         <div class="carousel-item">
-          <%= render "shared/stampcard" %>
+          <%= render "shared/stampcard", stamp_card_template: @stamp_card_template, shop: @shop%>
           <div class="carousel-caption d-none d-md-block">
           </div>
         </div>
         <div class="carousel-item">
-          <%= render "shared/stampcard" %>
+          <%= render "shared/stampcard", stamp_card_template: @stamp_card_template, shop: @shop%>
           <div class="carousel-caption d-none d-md-block">
           </div>
         </div>
