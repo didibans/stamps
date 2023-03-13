@@ -8,14 +8,20 @@
         </div>
           <p><%= stamp_card_template.title %></p>
           <div class="img-container">
+            <% if stamp_card %>
+              <% stamp_card.stamp_amount.times do %>
+                <img class="active" src="" alt="">
+              <% end %>
 
-          <% stamp_card.stamp_amount.times do %>
-            <img class="active" src="" alt="">
-          <% end %>
+              <% (stamp_card_template.max_stamps - stamp_card.stamp_amount).times do %>
+                <img src="" alt="">
+              <% end %>
 
-          <% (stamp_card_template.max_stamps - stamp_card.stamp_amount).times do %>
-            <img src="" alt="">
-          <% end %>
+            <% else %>
+              <% stamp_card_template.max_stamps.times do %>
+                <img src="" alt="">
+              <% end %>
+            <% end %>
 
           </div>
       </div>
