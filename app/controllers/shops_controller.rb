@@ -28,6 +28,7 @@ class ShopsController < ApplicationController
         map_info_window_html: render_to_string(partial: "map_info_window", locals: { shop: @shop })
       }
     ]
+
   end
 
   def new

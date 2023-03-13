@@ -21,7 +21,13 @@
   </div>
 </div>
 
+<div data-controller="qr-scanner" data-qr-scanner-shop-value="<%= @shop.id %>" data-qr-scanner-stampCardTemplate-value="<%= @stamp_card_template.id %>">
+  <video id="camera" width="100%" height="400"></video>
+  <div data-qr-scanner-target="output">
+  </div>
+</div>
 
-<button class="btn btn-primary">PRESS ME
+
+<%# <button class="btn btn-primary">PRESS ME
 <% stamp_cards_controller.increase_progress %>
-</button>
+<%# </button> %>

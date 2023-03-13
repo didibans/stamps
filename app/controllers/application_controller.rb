@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   include Pundit::Authorization
+  protect_from_forgery with: :null_session,
+      if: Proc.new { |c| c.request.format =~ %r{application/json} }
 
   # Pundit: allow-list approach
   after_action :verify_authorized, except: :index, unless: :skip_pundit?

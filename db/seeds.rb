@@ -61,5 +61,5 @@ StampCardTemplate.create!(
 )
 puts "Created StampCard-Template for each shop..."
 
-seed_stamp_card = StampCard.create!(stamp_amount: 6, user_id: User.all.sample.id, stamp_card_template_id: StampCardTemplate.all.sample.id)
-puts "Created StampCard for #{seed_stamp_card.user.username} of #{seed_stamp_card.stamp_card_template.shop.name}"
+# seed_stamp_card = StampCard.create!(stamp_amount: 6, user_id: User.all.sample.id, stamp_card_template_id: StampCardTemplate.all.sample.id)
+# puts "Created StampCard for #{seed_stamp_card.user.username} of #{seed_stamp_card.stamp_card_template.shop.name}"
