@@ -7,6 +7,7 @@ class PagesController < ApplicationController
     end
     @shop = Shop.last
     @stamp_card_template = @shop.stamp_card_templates[0]
+    @stamp_cards = StampCard.where(user_id = @current_user_id)
   end
 
   def qr_code_show
