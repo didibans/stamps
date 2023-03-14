@@ -12,17 +12,17 @@
       <%=  %>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <%= render "shared/stampcard", stamp_card_template: @stamp_card_template, shop: @shop, stamp_card: @stamp_card %>
+          <%= render "stampcard_index", stamp_card: @stamp_card1 %>
           <div class="carousel-caption d-none d-md-block">
           </div>
         </div>
         <div class="carousel-item">
-          <%= render "shared/stampcard", stamp_card_template: @stamp_card_template, shop: @shop, stamp_card: @stamp_card %>
+          <%= render "stampcard_index", stamp_card: @stamp_card2 %>
           <div class="carousel-caption d-none d-md-block">
           </div>
         </div>
         <div class="carousel-item">
-          <%= render "shared/stampcard", stamp_card_template: @stamp_card_template, shop: @shop, stamp_card: @stamp_card %>
+          <%= render "stampcard_index", stamp_card: @stamp_card3 %>
           <div class="carousel-caption d-none d-md-block">
           </div>
         </div>
