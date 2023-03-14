@@ -37,9 +37,12 @@ class StampCardsController < ApplicationController
       new = StampCard.create(stamp_amount: 1, user_id: user.id, stamp_card_template_id: stamp_card_template.id)
       authorize new
     end
-    redirect_to shop_path(shop)
+    #redirect_to shop_path(shop)
   end
 
+  def index
+    @stamp_cards = policy_scope(StampCard)
+  end
   # private
 
   # def stamp_card_params
