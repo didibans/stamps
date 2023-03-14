@@ -20,7 +20,7 @@ class ShopsController < ApplicationController
   def show
     authorize @shop
     @stamp_card_template = StampCardTemplate.find_by(shop: @shop)
-    @stamp_card = StampCard.find_by(stamp_card_template: @stamp_card_template)
+    @stamp_card = StampCard.find_by(stamp_card_template: @stamp_card_template, user_id: current_user.id)
     @markers = [
       {
         lat: @shop.latitude,
@@ -28,7 +28,6 @@ class ShopsController < ApplicationController
         map_info_window_html: render_to_string(partial: "map_info_window", locals: { shop: @shop })
       }
     ]
-
   end
 
   def new
