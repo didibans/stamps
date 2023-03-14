@@ -18,3 +18,6 @@ application.register("search-shop", SearchShopController)
 
 import StampCardController from "./stamp_card_controller"
 application.register("stamp-card", StampCardController)
+
+import UserSubscriptionController from "./user_subscription_controller"
+application.register("user-subscription", UserSubscriptionController)

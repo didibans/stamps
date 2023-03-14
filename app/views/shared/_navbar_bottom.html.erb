@@ -23,7 +23,7 @@
       </div>
     <% end %>
   </div>
-  <div class="modal fade" tabindex="-1" id="qr-code-modal">
+  <div data-controller="user-subscription" data-user-subscription-user-id-value="<%= current_user.id %>" class="modal fade" tabindex="-1" id="qr-code-modal">
     <div class="modal-dialog modal-fullscreen">
       <div class="modal-content">
         <div class="modal-header">

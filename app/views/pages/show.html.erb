@@ -1,5 +1,7 @@
 <div data-controller="qr-scanner" data-qr-scanner-shop-value="<%= current_user.shops[0] %>" data-qr-scanner-stampCardTemplate-value="<%= current_user.shops[0].stamp_card_templates[0].id %>">
   <video id="camera" width="100%" height="400"></video>
-  <div data-qr-scanner-target="output">
+  <div>
+    <div data-qr-scanner-target="output">
+    </div>
   </div>
 </div>
