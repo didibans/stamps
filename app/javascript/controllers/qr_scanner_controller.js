@@ -6,8 +6,6 @@ export default class extends Controller {
   static values = { shop: String, stampcardtemplate: String }
 
   connect() {
-    console.log(this.shopValue);
-    console.log(this.stampcardtemplateValue);
     navigator.mediaDevices.getUserMedia({ video: true }).then((stream) => {
       this.qrScanner = new QrScanner(
         document.getElementById('camera'),
