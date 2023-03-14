@@ -10,7 +10,7 @@
         <i class="fa-solid fa-qrcode"></i>
         <p>QR Code</p>
       </div>
-    <%= link_to root_path, style: "text-decoration: none" do  %>
+    <%= link_to stamp_cards_path(current_user.id), style: "text-decoration: none" do  %>
       <div class="nav-bot-logo">
         <i class="fa-solid fa-stamp"></i>
         <p>My stamps</p>
@@ -51,9 +51,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body d-flex align-items-center justify-content-center text-center">
-          <div>
-            <%= render "shared/stampcard_confirmation", stamp_card_template: @stamp_card_template, shop: @shop %>
-          </div>
+
           <p class="p-3 align-self-center">Successfully added a stamp!</p>
         </div>
         <div class="modal-footer">
