@@ -1,6 +1,10 @@
 class StampCardsController < ApplicationController
   FINISHED = false
 
+  def index
+    @stamp_cards = policy_scope(StampCard)
+  end
+
   def stampit
     @finished = FINISHED
     user = User.find(params[:user_id])
@@ -13,16 +17,24 @@ class StampCardsController < ApplicationController
         @finished = true
       end
       @stamp_card.stamp_amount += 1
-      @stamp_card.update(stamp_amount: @stamp_card.stamp_amount)
+      send_notification(user) if @stamp_card.update(stamp_amount: @stamp_card.stamp_amount)
       authorize @stamp_card
     else
-      new = StampCard.create(stamp_amount: 1, user_id: user.id, stamp_card_template_id: stamp_card_template.id)
-      authorize new
+      new_stamp = StampCard.create(stamp_amount: 1, user_id: user.id, stamp_card_template_id: stamp_card_template.id)
+      authorize new_stamp
     end
   end
 
-  def index
-    @stamp_cards = policy_scope(StampCard)
+  private
+
+  def send_notification(user)
+      UserChannel.broadcast_to(
+        user,
+        "neuer stamp diggi"
+        # render_to_string(partial: "message", locals: {message: @message})
+      )
+      head :ok
+
   end
 
   # def destroy
