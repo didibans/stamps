@@ -19,8 +19,10 @@ class StampCardsController < ApplicationController
       new = StampCard.create(stamp_amount: 1, user_id: user.id, stamp_card_template_id: stamp_card_template.id)
       authorize new
     end
-    # redirect_to shop_path(shop) # this needs to be changed, since the current_user is the owner
-    # redirect_to page_path(current_user)
+  end
+
+  def index
+    @stamp_cards = policy_scope(StampCard)
   end
 
   # def destroy
