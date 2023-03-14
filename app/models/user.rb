@@ -6,6 +6,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :stamp_cards
+  has_many :shops
   has_one_attached :qrcode, dependent: :destroy
   after_create :generate_qrcode
 
@@ -24,13 +25,7 @@ class User < ApplicationRecord
   # end
 
   def generate_qrcode
-    # Get the host
-    # host = Rails.application.routes.default_url_options[:host]
-    # host = Rails.application.config.action_controller.default_url_options[:host]
-
-    # Create the QR code object
-    # qrcode = RQRCode::QRCode.new("http://#{host}/posts/#{id}")
-    qrcode = RQRCode::QRCode.new("#{self.id}")
+    qrcode = RQRCode::QRCode.new("http://localhost:3000/#{id}/stamp_cards")
 
     # Create a new PNG object
     png = qrcode.as_png(
