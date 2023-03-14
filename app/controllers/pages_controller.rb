@@ -14,9 +14,13 @@ class PagesController < ApplicationController
     when 2
       @stamp_card1 = StampCard.where(user_id: current_user.id).order(stamp_amount: :desc)[0]
       @stamp_card2 = StampCard.where(user_id: current_user.id).order(stamp_amount: :desc)[1]
+      @stamp_card3 = StampCard.where(user_id: current_user.id).order(stamp_amount: :desc)[0]
     when 1
       @stamp_card1 = StampCard.where(user_id: current_user.id).order(stamp_amount: :desc)[0]
-      # else
+      @stamp_card2 = StampCard.where(user_id: current_user.id).order(stamp_amount: :desc)[0]
+      @stamp_card3 = StampCard.where(user_id: current_user.id).order(stamp_amount: :desc)[0]
+    else
+      @template1 = StampCardTemplate.all.sample
     end
   end
 end
