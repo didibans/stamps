@@ -6,6 +6,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :stamp_cards
+  has_many :shops
   has_one_attached :qrcode, dependent: :destroy
   after_create :generate_qrcode
 

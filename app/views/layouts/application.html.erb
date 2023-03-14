@@ -15,7 +15,9 @@
     <%# <% if current_user %>
       <% if current_user %>
         <%= render "shared/navbar_top" %>
-        <%= render "shared/navbar_bottom" %>
+          <% unless controller_name == "users" %>
+            <%= render "shared/navbar_bottom" %>
+        <% end %>
       <% end %>
       <div>
         <%= yield %>
