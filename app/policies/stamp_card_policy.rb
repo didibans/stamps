@@ -1,13 +1,9 @@
 class StampCardPolicy < ApplicationPolicy
-  def create?
-    true
-  end
-
-  def update?
-    true
-  end
-
   def stampit?
+    true
+  end
+
+  def show?
     true
   end
 

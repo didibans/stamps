@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :pages, only: [:show]
   resources :shops do
     resources :stamp_card_templates, only: %i[new create] do
-      resources :stamp_cards, only: %i[create update]
+      resources :stamp_cards, only: %i[show destroy]
     end
   end
 end
