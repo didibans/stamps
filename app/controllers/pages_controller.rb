@@ -10,6 +10,10 @@ class PagesController < ApplicationController
     @stamp_cards = StampCard.where(user_id = @current_user_id)
   end
 
+  def show
+
+  end
+
   def qr_code_show
   end
 end
