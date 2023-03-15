@@ -6,7 +6,7 @@ class StampCardsController < ApplicationController
   def stampit
     user = User.find(params[:user_id])
     shop = current_user.shops[0]
-    shop_id = shop.id
+    # shop_id = shop.id
     stamp_card_template = shop.stamp_card_templates[0]
     @stamp_card = StampCard.find_by(user_id: user.id, stamp_card_template_id: stamp_card_template.id)
     if @stamp_card.present?
@@ -17,7 +17,7 @@ class StampCardsController < ApplicationController
       @stamp_card.stamp_amount += 1
       authorize @stamp_card
       # redirect_to shop_path(shop)
-      send_notification(user, shop_id) if @stamp_card.update(stamp_amount: @stamp_card.stamp_amount)
+      send_notification(user) if @stamp_card.update(stamp_amount: @stamp_card.stamp_amount)
     else
       new_stamp = StampCard.new(stamp_amount: 1, user_id: user.id, stamp_card_template_id: stamp_card_template.id)
       authorize new_stamp
@@ -28,10 +28,10 @@ class StampCardsController < ApplicationController
 
   private
 
-  def send_notification(user, shop_id)
+  def send_notification(user)
     UserChannel.broadcast_to(
       user,
-      shop_id
+      "hallo"
     )
     # head :ok
   end

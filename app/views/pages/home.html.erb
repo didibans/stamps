@@ -1,5 +1,7 @@
-<h1 class="p-3 pt-5">Welcome, <%= current_user.username %></h1>
-<h3 class="ps-3 pt-5">Most stamped cards</h3>
+<div class="ps-3 pt-3">
+  <h1><%= ["Hello,", "Hi there,", "Hey,", "Greetings,", "Salutations,", "Howdy,", "Yo,", "What's up,", "Hiya,", "Sup,", "G'day,"].sample %> <%= current_user.username %></h1>
+  <h3 class="pt-3" style="margin-bottom: 0;">Almost finshed StampCards</h3>
+</div>
   <div class="container d-flex align-items-center justify-content-center">
     <div id="carouselExampleCaptions" class="carousel slide mt-3" data-bs-ride="carousel">
       <div class="carousel-indicators">
