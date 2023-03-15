@@ -1,10 +1,17 @@
-<img src="<%= @shop.img_url %>" alt="rss feed" style="object-fit: cover; position: center; heigth: 100px; width: 100%; ">
+<div class="d-flex justify-content-center mt-3">
+  <img src="<%= @shop.img_url %>" alt="rss feed" class="img-fluid mb-3" style="object-fit: cover;">
+</div>
+
 <div class="shop-picture-container container d-flex flex-column align-items-center justify-content-center py-1"><!--<%= @shop.img_url %> This is the real logic, but in the meanwhile we have the image you see-->
-  <h1><%= @shop.name %></h1>
-  <ul class="list-unstyled">
-  <li><%= render "shared/stampcard", stamp_card_template: @stamp_card_template, shop: @shop, stamp_card: @stamp_card %></li>
-  <li><%= render "shared/opening_hours" %></li>
-  </ul>
+
+  <div class="p-3">
+    <h3 class="d-flex align-items-center text-center" style="font-size: 19px; letter-spacing: 0.5px"><%= @shop.description %></h3>
+  </div>
+    <ul class="list-unstyled py-3">
+      <li><%= render "shared/stampcard", stamp_card_template: @stamp_card_template, shop: @shop, stamp_card: @stamp_card %></li>
+      <li><%= render "shared/opening_hours" %></li>
+    </ul>
+
 </div>
 
 <div class="map-address">
