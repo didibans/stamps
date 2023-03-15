@@ -1,6 +1,8 @@
 <div class="container">
-  <h1 class="pt-3">These are your stampcards</h1>
+  <h1 class="py-3">Your stampcards</h1>
   <% @stamp_cards.each do |stamp_card| %>
-    <%= render "stampcard_on_index", stamp_card: stamp_card %>
+    <ul class="py-3 list-unstyled">
+    <li><%= render "stampcard_on_index", stamp_card: stamp_card %></li>
+    </ul>
   <% end %>
 </div>
