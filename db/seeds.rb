@@ -148,25 +148,8 @@ end
                 description: "A trendy café that serves up breakfast, lunch, and coffee drinks, as well as cocktails in the evening. They also have a small outdoor terrace." }
     ]
   )
+
   puts "#{Shop.last.name} created..."
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   dates = [(DateTime.now + 1.year), (DateTime.now + 2.years), (DateTime.now + 5.month), (DateTime.now + 9.months), (DateTime.now + 18.months), (DateTime.now + 3.months)]
 

@@ -1,7 +1,6 @@
-<div data-controller="qr-scanner" data-qr-scanner-shop-value="<%= current_user.shops[0] %>" data-qr-scanner-stampCardTemplate-value="<%= current_user.shops[0].stamp_card_templates[0].id %>">
-  <video id="camera" width="100%" height="400"></video>
-  <div>
-    <div data-qr-scanner-target="output">
-    </div>
+<div class="text-center">
+  <h1 class="p-3">Scan code of customer!</h1>
+  <div data-controller="qr-scanner">
+    <video id="camera" width="100%" height="300"></video>
   </div>
 </div>
