@@ -1,7 +1,7 @@
-<h1 class="p-3">Welcome <%= current_user.username %></h1>
-<h3 class="ps-3">Here are your most stamped cards</h3>
+<h1 class="p-3 pt-5">Welcome, <%= current_user.username %></h1>
+<h3 class="ps-3 pt-5">Most stamped cards</h3>
   <div class="container d-flex align-items-center justify-content-center">
-    <div id="carouselExampleCaptions" class="carousel slide mt-5" data-bs-ride="carousel">
+    <div id="carouselExampleCaptions" class="carousel slide mt-3" data-bs-ride="carousel">
       <div class="carousel-indicators">
         <div>
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active d-none" aria-current="true" aria-label="Slide 1"></button>
@@ -9,23 +9,26 @@
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3" class="d-none"></button>
         </div>
       </div>
-      <%=  %>
       <div class="carousel-inner">
-        <div class="carousel-item active">
-          <%= render "shared/stampcard", stamp_card_template: @stamp_card_template, shop: @shop, stamp_card: @stamp_card %>
-          <div class="carousel-caption d-none d-md-block">
+        <% if @stamp_card1 %>
+          <div class="carousel-item active">
+            <%= render "stampcard_index", stamp_card: @stamp_card1 %>
+            <div class="carousel-caption d-none d-md-block">
+            </div>
           </div>
-        </div>
-        <div class="carousel-item">
-          <%= render "shared/stampcard", stamp_card_template: @stamp_card_template, shop: @shop, stamp_card: @stamp_card %>
-          <div class="carousel-caption d-none d-md-block">
+          <div class="carousel-item">
+            <%= render "stampcard_index", stamp_card: @stamp_card2 %>
+            <div class="carousel-caption d-none d-md-block">
+            </div>
           </div>
-        </div>
-        <div class="carousel-item">
-          <%= render "shared/stampcard", stamp_card_template: @stamp_card_template, shop: @shop, stamp_card: @stamp_card %>
-          <div class="carousel-caption d-none d-md-block">
+          <div class="carousel-item">
+            <%= render "stampcard_index", stamp_card: @stamp_card3 %>
+            <div class="carousel-caption d-none d-md-block">
+            </div>
           </div>
-        </div>
+        <% else %>
+          <%= render "stampcard_index_zero", stamp_card_template: @template1 %>
+        <% end %>
       </div>
       <button class="carousel-control-prev transparent-arrow" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
         <span class="carousel-control-prev-icon transparent-arrow" aria-hidden="true"></span>
