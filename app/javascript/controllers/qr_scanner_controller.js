@@ -21,5 +21,6 @@ export default class extends Controller {
 
   disconnect() {
     this.qrScanner.stop();
+    console.log("logged out");
   }
 }

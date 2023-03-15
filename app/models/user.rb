@@ -25,7 +25,7 @@ class User < ApplicationRecord
   # end
 
   def generate_qrcode
-    qrcode = RQRCode::QRCode.new("http://localhost:3000/#{id}/stamp_cards")
+    qrcode = RQRCode::QRCode.new("/#{id}/stamp_cards")
 
     # Create a new PNG object
     png = qrcode.as_png(
