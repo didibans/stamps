@@ -11,20 +11,20 @@
             <% if stamp_card %>
               <% stamp_card.stamp_amount.times do %>
               <div class="active">
-                <%= image_tag 'Stamps_black'%>
+                <%= image_tag image_url("Stamps_black.png")%>
               </div>
               <% end %>
 
               <% (stamp_card_template.max_stamps - stamp_card.stamp_amount).times do %>
                 <div class="inactive">
-                  <%= image_tag 'Stamps_black' %>
+                  <%= image_tag image_url("Stamps_black.png")%>
                 </div>
               <% end %>
 
             <% else %>
               <% stamp_card_template.max_stamps.times do %>
                 <div class="inactive">
-                  <%= image_tag 'Stamps_black' %>
+                  <%= image_tag image_url("Stamps_black.png")%>
                 </div>
               <% end %>
             <% end %>
