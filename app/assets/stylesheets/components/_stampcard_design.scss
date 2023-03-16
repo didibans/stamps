@@ -20,7 +20,8 @@
   height: 100%;
   backface-visibility: hidden;
   // background: $light-gray;
-  background: radial-gradient(50% 250% at 0 50%,#2f397c 0,#3b499d 100%);
+  background: radial-gradient(50% 250% at 0 50%,#2F397C 0,#3B499D 100%);
+  // background-color: #902EA4;
   color: white;
   border-radius: 12px;
 }
@@ -31,7 +32,8 @@
   height: 100%;
   backface-visibility: hidden;
   // background: $light-gray;
-  background: radial-gradient(50% 250% at 0 50%,#2f397c 0,#3b499d 100%);
+  background: radial-gradient(50% 250% at 0 50%,#2F397C 0,#3B499D 100%);
+  // background-color: #902EA4;
   color: white;
   transform: rotateY(180deg);
   border-radius: 12px;
@@ -52,32 +54,53 @@
 }
 
 .img-container img{
-  // -tw-text-opacity: 1;
-  //   color: rgb(255 255 255/var(--tw-text-opacity));
+  // border: 2px solid black ;
+  // height: 0;
+  width: 100%;
+  padding-bottom: 100%;
+  border-radius: 50%;
+}
+
+// .img-container .confirmed{
+//   border: 4px solid rgb(87, 204, 93) ;
+//   background-color: black;
+//   height: 0;
+//   width: 100%;
+//   padding-bottom: 100%;
+//   border-radius: 50%;
+// }
+
+.img-container .active img{
+  background-color: #FFF055;
+  height: 100%;
+  width: 100%;
+  // padding-bottom: 100%;
+  // border-radius: 50%;
+  // object-fit: cover;
+  // position: center;
+  padding: 0;
+}
+
+.img-container .active {
   border: 0.3px solid white ;
-  height: 0;
-  width: 100%;
-  padding-bottom: 100%;
   border-radius: 50%;
 }
 
-.img-container .confirmed{
-  border: 4px solid rgb(87, 204, 93) ;
-  background-color: orange;
-  height: 0;
-  width: 100%;
-  padding-bottom: 100%;
+.img-container .inactive {
+  border: 0.3px solid white ;
   border-radius: 50%;
 }
 
-.img-container .active{
-  // background-color: $yellow;
-  // background-color: radial-gradient(50% 250% at 0 50%,#f9ec67 0,#fff055 100%);
-  background-color: #fff055;
-  height: 0;
+.img-container .inactive img{
+  // background-color: white;
+  height: 100%;
   width: 100%;
-  padding-bottom: 100%;
-  border-radius: 50%;
+  // padding-bottom: 100%;
+  // border-radius: 50%;
+  // object-fit: cover;
+  // position: center;
+  padding: 0;
+  visibility: hidden;
 }
 
 .img-container {

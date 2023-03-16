@@ -9,7 +9,9 @@
           <p><%= stamp_card_template.title %></p>
           <div class="img-container">
             <% stamp_card_template.max_stamps.times do %>
-              <img src="" alt="">
+              <div class="inactive">
+                <%= image_tag 'Stamps_black' %>
+              </div>
             <% end %>
           </div>
       </div>
