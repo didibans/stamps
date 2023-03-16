@@ -1,10 +1,8 @@
 require 'faker'
-
 StampCard.destroy_all
 StampCardTemplate.destroy_all
 Shop.destroy_all
 User.destroy_all
-
 User.create!(
   username: "Ricky Martin",
   email: "blabla@hardcoded.com",
@@ -78,10 +76,6 @@ StampCardTemplate.create!(
     { title: "Free beer on us", description: "Buy 10 beers and get one free!", max_stamps: 10, expiration_date: dates.sample, shop: Shop.find_by(name: "Brauhaus Früh am Dom") },
     { title: "Burger for free", description: "Buy 10 burgers and get one free!", max_stamps: 10, expiration_date: dates.sample, shop: Shop.find_by(name: "Die Fette Kuh") },
     { title: "Free Kölsch beer", description: "Buy 10 Kölsch beers and get one free!", max_stamps: 10, expiration_date: dates.sample, shop: Shop.find_by(name: "Lommerzheim") },
-    { title: "Free ice cream cone", description: "Buy 10 ice cream cones and get one free!", max_stamps: 10, expiration_date: dates.sample, shop: Shop.find_by(name: "Eiscafe Il Gelato") },
-    { title: "Vegan burger for free", description: "Buy 10 vegan burgers and get one free!", max_stamps: 10, expiration_date: dates.sample, shop: Shop.find_by(name: "Bunte Burger") },
-    { title: "Free beer on the house", description: "Buy 10 beers and get one free in our beer garden!", max_stamps: 10, expiration_date: dates.sample, shop: Shop.find_by(name: "Gaffel Haus Köln") },
-    { title: "Free coffee on us", description: "Buy 10 coffees and get one free!", max_stamps: 10, expiration_date: dates.sample, shop: Shop.find_by(name: "Café Sehnsucht") },
     { title: "Free ramen bowl", description: "Buy 10 ramen bowls and get one free!", max_stamps: 10, expiration_date: dates.sample, shop: Shop.find_by(name: "Takumi Ramen") },
     { title: "Free fries on the house", description: "Buy 10 orders of fries and get one free!", max_stamps: 10, expiration_date: dates.sample, shop: Shop.find_by(name: "Frittenwerk") },
     { title: "Free coffee delight", description: "Get every 11th coffee on the house!", max_stamps: 10, expiration_date: dates.sample, shop: Shop.find_by(name: "Cafe Buur") },

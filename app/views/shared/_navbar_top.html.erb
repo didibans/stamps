@@ -1,12 +1,10 @@
-<nav class="navbar sticky-top">
+<nav class="navbar navbar-dark sticky-top">
   <div class="container-fluid" style="height: 54px">
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-      <span class="navbar-toggler-icon"></span>
+    <button class="navbar-toggler " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+      <span class="navbar-toggler-icon" style="border-color: none"></span>
     </button>
     <h1 class="" style="margin-bottom: 0; margin-right: 12px; color: white;"><strong>Stamps</strong></h1>
-
-
     <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
       <div class="offcanvas-header">
         <%= link_to root_path do %>
@@ -17,10 +15,10 @@
       <div class="offcanvas-body">
         <ul class="navbar-nav justify-content-start flex-grow-1">
           <li class="nav-item my-3">
-            <a class="nav-link active" aria-current="page" href="/">Home</a>
+            <a class="nav-link active" style="text-decoration: none; color: black" aria-current="page" href="/">Home</a>
           </li>
           <li class="nav-item my-3">
-            <a class="nav-link" href="/pages/<%= current_user.id %>">QR-Scanner</a>
+            <a class="nav-link" style="text-decoration: none; color: black" href="/pages/<%= current_user.id %>">QR-Scanner</a>
           </li>
           <li class="nav-item my-4">
           <%= link_to "Logout", destroy_user_session_path, style: "text-decoration: none; color: black", class:"nav-link", data: {turbo_method: :delete} %>
