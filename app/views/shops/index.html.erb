@@ -1,12 +1,12 @@
 <div class="container">
-  <h1 class="pt-3">Local Shops</h1>
+  <h1 class="py-3">Find your shops</h1>
 
   <div class="wrapper" data-controller="search-shop">
     <%= form_with url: shops_path, method: :get, html: {class:
       "mb-4", data: {search_shop_target: "form"}} do |f| %>
         <%= f.text_field :query,
                           class: "form-control",
-                          placeholder: "Find your place",
+                          placeholder: "🔍",
                           value: params[:query],
                           data: {
                             search_shop_target: "input",
