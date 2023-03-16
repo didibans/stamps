@@ -1,34 +1,9 @@
-<nav class="navbar sticky-top">
+<nav class="navbar navbar-dark sticky-top">
   <div class="container-fluid" style="height: 54px">
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-      <span class="navbar-toggler-icon"></span>
+    <button class="navbar-toggler " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+      <span class="navbar-toggler-icon" style="border-color: none"></span>
     </button>
-
-
-
-
-       <!-- <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item dropdown">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Action", "#", class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
-              <%= link_to "Log out", "#", class: "dropdown-item", data: {turbo_method: :delete} %>
-            </div>
-          </li>
-        <% else %>
-
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-
-        <% end %>'
-      <!-->
 
     <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
       <div class="offcanvas-header">
@@ -40,10 +15,10 @@
       <div class="offcanvas-body">
         <ul class="navbar-nav justify-content-start flex-grow-1">
           <li class="nav-item my-3">
-            <a class="nav-link active" aria-current="page" href="/">Home</a>
+            <a class="nav-link active" style="text-decoration: none; color: black" aria-current="page" href="/">Home</a>
           </li>
           <li class="nav-item my-3">
-            <a class="nav-link" href="/pages/<%= current_user.id %>">QR-Scanner</a>
+            <a class="nav-link" style="text-decoration: none; color: black" href="/pages/<%= current_user.id %>">QR-Scanner</a>
           </li>
           <li class="nav-item my-4">
           <%= link_to "Logout", destroy_user_session_path, style: "text-decoration: none; color: black", class:"nav-link", data: {turbo_method: :delete} %>
